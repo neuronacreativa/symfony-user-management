@@ -1,8 +1,8 @@
 <?php
 
-namespace App\userManagementApi\domain\valueObjects;
+namespace App\Domain\ValueObjects;
 
-use App\userManagementApi\domain\shared\ValueObject;
+use App\Domain\Shared\ValueObject;
 
 class SurName implements ValueObject
 {

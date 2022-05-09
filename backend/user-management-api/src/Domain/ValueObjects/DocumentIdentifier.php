@@ -1,9 +1,9 @@
 <?php
 
-namespace App\userManagementApi\domain\valueObjects;
+namespace App\Domain\ValueObjects;
 
-use App\userManagementApi\domain\Exceptions\ValueObjectException;
-use App\userManagementApi\domain\shared\ValueObject;
+use App\Domain\Exceptions\ValueObjectException;
+use App\Domain\Shared\ValueObject;
 
 class DocumentIdentifier implements ValueObject
 {

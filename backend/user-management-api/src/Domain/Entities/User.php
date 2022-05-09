@@ -1,13 +1,13 @@
 <?php
 
-namespace App\userManagementApi\domain\entities;
+namespace App\Domain\Entities;
 
-use App\userManagementApi\domain\Exceptions\ValueObjectException;
-use App\userManagementApi\domain\shared\Entity;
-use App\userManagementApi\domain\valueObjects\DocumentIdentifier;
-use App\userManagementApi\domain\valueObjects\Email;
-use App\userManagementApi\domain\valueObjects\SurName;
-use App\userManagementApi\domain\valueObjects\Name;
+use App\Domain\Exceptions\ValueObjectException;
+use App\Domain\shared\Entity;
+use App\Domain\ValueObjects\DocumentIdentifier;
+use App\Domain\ValueObjects\Email;
+use App\Domain\ValueObjects\SurName;
+use App\Domain\ValueObjects\Name;
 use Symfony\Component\Uid\Uuid;
 
 class User implements Entity
