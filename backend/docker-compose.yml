@@ -1,0 +1,32 @@
+version: "3.4"
+services:
+  db:
+    container_name: um-database
+    image: mysql
+    ports:
+      - "3306:3306"
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      MYSQL_DATABASE: dbname
+      MYSQL_PASSWORD: test
+      MYSQL_ROOT_PASSWORD: test
+    volumes:
+      - persistent:/var/lib/mysql
+    networks:
+      - default
+  www:
+    container_name: um-webserver
+    build: .
+    ports:
+      - "8000:80"
+    volumes:
+      - ./config/db/entrypoint/:/docker-entrypoint-initdb.d
+      - ./config/db/conf.d/:/etc/mysql/conf.d
+      - ./user-management-api/:/var/www
+      - ./user-management-api/public:/var/www/html
+    links:
+      - db
+    networks:
+      - default
+volumes:
+  persistent:
